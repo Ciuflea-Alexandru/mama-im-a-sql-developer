@@ -1,5 +1,3 @@
--- Select ten actors
+-- Select the emplyees
 
-SELECT * FROM actor
-WHERE first_name = 'Penelope'
-LIMIT 10
+SELECT * FROM employees

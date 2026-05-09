@@ -1,6 +1,6 @@
--- Show all columns for actors who have one of the following patient_ids: 1,45,534,879,1000
+-- Show the orders who have one of the following order_ids: 10250, 10500, 10750, 11000
 
 SELECT *
-FROM actor
-WHERE actor_id IN (1, 25, 50, 100, 200)
-ORDER BY actor_id;
+FROM orders
+WHERE order_id IN (10250, 10500, 10750, 11000)
+ORDER BY order_id;

@@ -1,5 +1,5 @@
--- Count how many movies were released in 2006
+-- Count the total orders for 1996
 
-SELECT COUNT(*) AS total_movies
-FROM film
-WHERE YEAR(release_year) = 2006;
+SELECT COUNT(*) AS total_orders
+FROM orders
+WHERE EXTRACT(YEAR FROM order_date) = 1996;

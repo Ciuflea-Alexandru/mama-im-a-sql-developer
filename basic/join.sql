@@ -1,8 +1,8 @@
--- Show for every city name the disctrict and address
+-- Show for every product its name, category and description
 
 SELECT
-  c.city,
-  a.district,
-  a.address
-FROM city AS c
-JOIN address AS a ON c.city_id = a.city_id;
+  p.product_name,
+  c.category_name,
+  c.description
+FROM products AS p
+JOIN categories AS c ON p.category_id = c.category_id

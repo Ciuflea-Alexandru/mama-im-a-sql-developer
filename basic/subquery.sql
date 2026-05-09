@@ -1,11 +1,10 @@
--- Select the films that have the highest rental rate
+-- Select the product id of the products with the bigest quantity ordered
 
 SELECT
-film_id,
-title,
-rental_rate
-FROM film
-WHERE rental_rate = (
-    SELECT max(rental_rate)
-    FROM film
+product_id,
+quantity
+FROM order_details
+WHERE quantity = (
+    SELECT max(quantity)
+    FROM order_details
   )
