@@ -1,4 +1,4 @@
--- Display the customer id for everyone who had more than 10 orders
+-- Show all the customers that have placed more than 10 orders
 
 SELECT
   customer_id
