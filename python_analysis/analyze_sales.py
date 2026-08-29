@@ -27,3 +27,4 @@ category_revenue = (
 
 print("\n--- Total Revenue by Product Category ---")
 print(category_revenue.to_string(index=False))
+

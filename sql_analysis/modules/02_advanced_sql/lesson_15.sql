@@ -9,16 +9,16 @@ GROUP BY order_date
 ORDER BY order_month;
 
 /*
-Truncate order dates to see how revenue changes month over month
+Truncate order dates to see how revenue changes quarter over month
 */
 
 SELECT
-DATE_TRUNC('quarter', o.order_date) AS order_month,
-ROUND(CAST(SUM(od.unit_price * od.quantity * (1 - od.discount)) AS NUMERIC), 2) AS monthly_revenue
+DATE_TRUNC('quarter', o.order_date) AS order_quarter,
+ROUND(CAST(SUM(od.unit_price * od.quantity * (1 - od.discount)) AS NUMERIC), 2) AS quarterly_revenue
 FROM orders o
 JOIN order_details od ON o.order_id = od.order_id
 GROUP BY 1
-ORDER BY order_month;
+ORDER BY order_quarter;
 
 /* 
 Find all orders placed in the last 30 days relative to a specific reference date,

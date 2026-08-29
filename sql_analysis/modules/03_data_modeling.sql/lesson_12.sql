@@ -1,4 +1,4 @@
-CREATE DATABASE northwind_olap;
+-- CREATE DATABASE northwind_olap;
 
 
 -- To populate the database with the Northwind dataset, you can use the following command in your terminal
