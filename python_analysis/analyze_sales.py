@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://postgres@localhost:5432/northwind')
+engine = create_engine('postgresql://postgres:12345@localhost:5432/northwind_oltp')
 print("Pulling tables from OLTP database...")
 df_orders = pd.read_sql("SELECT order_id, customer_id, order_date FROM orders", engine)
 df_details = pd.read_sql("SELECT order_id, product_id, unit_price, quantity, discount FROM order_details", engine)

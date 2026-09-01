@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://postgres@localhost:5432/northwind')
+engine = create_engine('postgresql://postgres:12345@localhost:5432/northwind_oltp')
 
 print('Pulling tables from OLTP...')
 
