@@ -1,8 +1,8 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-oltp_engine = create_engine('postgresql://postgres@localhost:5432/northwind')
-olap_engine = create_engine('postgresql://postgres@localhost:5432/northwind_olap')
+oltp_engine = create_engine('postgresql://postgres:12345@localhost:5432/northwind_oltp')
+olap_engine = create_engine('postgresql://postgres:12345@localhost:5432/northwind_olap')
 
 # --- STEP 1: EXTRACT ---
 print('--- Step 1: Extracting raw data from OLTP... ---')

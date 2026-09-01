@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 
 load_dotenv()
 
-oltp_engine = create_engine('postgresql://postgres@localhost:5432/northwind')
+oltp_engine = create_engine('postgresql://postgres:12345@localhost:5432/northwind_oltp')
 
 print(' Extracting raw data to upload to S3... ')
 df_orders = pd.read_sql('SELECT * FROM orders', oltp_engine)

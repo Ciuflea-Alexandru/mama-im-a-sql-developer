@@ -25,34 +25,44 @@ If you are running this project locally (or in a development container like GitH
 # In the terminal install PostgreSQL
 sudo apt update
 sudo apt install -y postgresql postgresql-contrib
+```
 
-# Install the PostgrSQL extension by microsoft or Matheus Teixeira
+```bash
+# Start the PostgreSQL:
 
-# Configurate the source OLTP Database (PostgreSQL)
-Connection_name=OLTP
+#For github codespace
+# Open quick access with ctrl + shift + p and type
+~/.bashrc
+# Paste this line
+pg_isready -q || sudo service postgresql start
+
+#For linux
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
+```bash
+# Open the prompt as the postgres user
+sudo -u postgres psql
+
+# Create the databases
+createdb northwind_oltp
+createdb northwind_olap
+
+# Give the postgres user a password
+ALTER USER postgres PASSWORD '12345';
+
+# Run the raw northwind.sql file inside your datasets directory
+sudo -u postgres psql -d northwind_oltp -f northwind.sql
+sudo -u postgres psql -d northwind_olap -f northwind.sql
+
+# Install a PostgrSQL extension
+# Configurate the database source
 Username=postgres
-Password=your_local_db_password
+Password=12345
 Server_Address=localhost
 Port=5432
 Database=northwind
-```
-
-```bash
-# Start the PostgreSQL server with the github codespace so you dont have to do it mannualy:
-
-# Open quick access with ctrl + shift + p and type
-~/.bashrc
-
-# Paste this line
-pg_isready -q || sudo service postgresql start
-```
-
-```bash
-# Run this in the terminal to create your raw transactional database
-createdb northwind
-
-# Run the raw northwind.sql file inside your datasets directory
-psql -d northwind -f path/to/datasets/northwind.sql
 
 # Install libraries:
 pip install -r requirements.txt
